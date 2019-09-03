@@ -19,7 +19,7 @@ const Cinema = db.define(
         allowNull: false
       },
 
-      picutre: {
+      picture: {
         type: Sequelize.STRING,
         allowNull: false
       }

@@ -6,9 +6,13 @@ const bodyParser = require('body-parser');
 const corsMiddelware = cors();
 const parserMiddelware = bodyParser.json();
 
+const cinemaRouter = require('./cinema/router');
+
 const app = express();
 app.use(corsMiddelware);
 app.use(parserMiddelware);
+
+app.use(cinemaRouter);
 
 
 const port = process.env.PORT || 4000;
