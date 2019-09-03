@@ -5,14 +5,21 @@ const router = new Router();
 router.get('/cinemas', (request, response, next) => {
   Cinema
     .findAll()
-    .then(events => response.send(events))
+    .then(cinemas => response.send(cinemas))
     .catch(err => next(err))
+})
+
+router.post('/cinemas', (request, response, next) => {
+  Cinema
+  .create(request.body)
+  .then(cinema => response.send(cinema)) 
+  .catch(err => next(err))
 })
 
 router.get('/cinema/:id', (request, response, next) => {
   Cinema
-    .findAll()
-    .then(event => response.send(response.body))
+    .findByPk(request.params.id)
+    .then(cinema => response.send(cinema))
     .catch(err => next(err))
 })
 

@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const db = require('../db');
+const Review = require('../review/model')
 
 const Cinema = db.define(
   'cinema',
@@ -30,7 +31,7 @@ const Cinema = db.define(
       tableName: 'cinemas'
     })
 
-  // Event.hasMany(Ticket)
-  // Ticket.belongsTo(Event)
+  Cinema.hasMany(Review)
+  Review.belongsTo(Cinema)
 
 module.exports = Cinema;

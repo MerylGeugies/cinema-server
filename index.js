@@ -7,12 +7,14 @@ const corsMiddelware = cors();
 const parserMiddelware = bodyParser.json();
 
 const cinemaRouter = require('./cinema/router');
+const reviewRouter = require('./review/router')
 
 const app = express();
 app.use(corsMiddelware);
 app.use(parserMiddelware);
 
 app.use(cinemaRouter);
+app.use(reviewRouter);
 
 
 const port = process.env.PORT || 4000;
