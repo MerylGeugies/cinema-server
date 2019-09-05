@@ -1,6 +1,5 @@
 const Sequelize = require('sequelize');
 const db = require('../db');
-// const Cinema = require('../cinema/model');
 
 const Review = db.define(
   'review',
@@ -16,27 +15,27 @@ const Review = db.define(
       },
 
       popcorn: { 
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: true
       },
 
       seats: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: true
       },
 
       leg_space: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: true
       },
 
       cheap: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: true
       },
 
       break: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: true
       }
       
